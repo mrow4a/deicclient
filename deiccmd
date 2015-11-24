@@ -9,5 +9,5 @@ do
   args="$args '$arg'"
 done
 script="$script_dir/$bin_path"
-export LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH
 eval exec $script $args
