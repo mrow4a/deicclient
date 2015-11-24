@@ -1,0 +1,13 @@
+#!/bin/sh
+lib_path="lib"
+bin_path="bin/owncloudcmd"
+script_dir=$(dirname $0)
+LD_LIBRARY_PATH="$script_dir/$lib_path"
+args=
+for arg in "$@";
+do
+  args="$args '$arg'"
+done
+script="$script_dir/$bin_path"
+export LD_LIBRARY_PATH
+eval exec $script $args
